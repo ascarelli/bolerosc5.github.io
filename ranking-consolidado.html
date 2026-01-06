@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fut C5</title>
+
+    <style>
+        :root {
+            --preto: #0b0b0b;
+            --amarelo: #f5c400;
+            --cinza: #1a1a1a;
+            --branco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: var(--preto);
+            color: var(--branco);
+        }
+
+        header {
+            background: var(--cinza);
+            border-bottom: 3px solid var(--amarelo);
+            padding: 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: var(--amarelo);
+            font-size: 1.6rem;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: var(--preto);
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--amarelo);
+            border-bottom: 2px solid var(--amarelo);
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background: var(--cinza);
+            border-left: 5px solid var(--amarelo);
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 600px;
+            border-radius: 6px;
+        }
+
+        footer {
+            background: var(--cinza);
+            color: #aaa;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+            font-size: 0.8rem;
+        }
+
+        /* 📱 Mobile */
+        @media (max-width: 600px) {
+            nav a {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #222;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Fut C5</h1>
+</header>
+
+<nav>
+    <a href="index.html">Início</a>
+    <a href="classificacao.html">Classificação</a>
+    <a href="galeria-honra.html">Galeria de Honra</a>
+    <a href="duelo-equipes.html">Duelo de Equipes</a>
+    <a href="controle-caixa.html">Controle de Caixa</a>
+    <a href="ranking-capitaes.html">Ranking de Capitães</a>
+    <a href="historico-caixa.html">Histórico de Caixa Anual</a>
+    <a href="escala-material.html">Escala de Material</a>
+    <a href="ranking-consolidado.html">Ranking Consolidado</a>
+    <a href="constituicao.html">Constituição</a>
+</nav>
+
+<main>
+    <div class="card">
+        <h2>Bem-vindo</h2>
+        <p>
+            Portal oficial do Fut C5.<br>
+            Use o menu acima para acessar as informações.
+        </p>
+    </div>
+</main>
+
+<footer>
+    © 2026 - Fut C5
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Fut C5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        :root {
+            --preto: #0b0b0b;
+            --amarelo: #f5c400;
+            --cinza: #1a1a1a;
+            --branco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: var(--preto);
+            color: var(--branco);
+        }
+
+        header {
+            background: var(--cinza);
+            border-bottom: 3px solid var(--amarelo);
+            padding: 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: var(--amarelo);
+            font-size: 1.6rem;
+        }
+
+        html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: var(--preto);
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--amarelo);
+            border-bottom: 2px solid var(--amarelo);
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background: var(--cinza);
+            border-left: 5px solid var(--amarelo);
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 600px;
+            border-radius: 6px;
+        }
+
+        footer {
+            background: var(--cinza);
+            color: #aaa;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+            font-size: 0.8rem;
+        }
+
+        .w3-sidebar {
+        z-index: 3;
+        width: 250px;
+        top: 43px;
+        bottom: 0;
+        height: inherit;
+        }
+
+        .space-left{
+            margin-left:25px
+        }
+
+        /* 📱 Mobile */
+        @media (max-width: 600px) {
+            nav a {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #222;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Fut C5</h1>
+</header>
+
+<nav>
+    <a href="index.html">Início</a>
+    <a href="classificacao.html">Classificação</a>
+    <a href="galeria-honra.html">Galeria de Honra</a>
+    <a href="duelo-equipes.html">Duelo de Equipes</a>
+    <a href="controle-caixa.html">Controle de Caixa</a>
+    <a href="ranking-capitaes.html">Ranking de Capitães</a>
+    <a href="historico-caixa.html">Histórico de Caixa Anual</a>
+    <a href="escala-material.html">Escala de Material</a>
+    <a href="ranking-consolidado.html">Ranking Consolidado</a>
+    <a href="constituicao.html">Constituição</a>
+</nav>
+
+<main>
+    <!-- ###################### Confirmação / Vagas ###################### -->
+    <div class="card">
+        <h2>I – Confirmação / Vagas</h2>  
+        <p>1 - Inicia-se sempre aos domingos às 18h.</p>
+            <p>2 - Até às 18:00h de segunda-feira a ordem é por número de jogos/critérios de preferência abaixo.</p>
+            <p>3 - Após as 18:00h, é por ordem de confirmação, independente de quantidade de jogos ou de fazer parte do grupo.</p>
+            <p>4 - Desconfirmação sem punição até às 16h de terça, após isso fica barrado para o próximo jogo.
+            Lembrando que é necessário escrever a palavra Desconfirma.</p>
+            <p>5 - Para confirmar, TODOS os membros do grupo que tenham interesse em participar devem votar na enquete que é aberta 
+            todo domingo no grupo</p>
+            <p>6 - Caso haja mais de 16 membros confirmados, a ordem de preferência segue os seguintes critérios:</p>
+            <p class="space-left">
+                <!--6.1 - Quem está com algum dos equipamentos ( TRAVES, REDES e COLETES), caso tenha confirmado ate as 18h de segunda, 
+                tem sua vaga garantida independente da quantidade de vezes que jogou no ano. -->
+                6.1 - Quem está com COLETES, e quem levou os equipamentos para o prédio (Trave e Rede). Totalizando 3 vagas.
+                Caso tenha confirmado até as 18:00h de segunda, tem sua vaga garantida independente da quantidade de vezes que jogou no ano. 
+                Somente para membros do grupo.
+            </p>
+            <p class="space-left">
+                6.2 - Quantidade de vezes que jogou no ano. Obs: Convidados vão para o fim da lista e a ordem deles é pela hora de confirmação, 
+                independente da quantidade de vezes que jogou no ano.
+            </p>
+            <p class="space-left">
+                6.3 - Em caso de empate, quem confirmou primeiro fica com a vaga.
+            </p>
+        <p>7 - Confirmou e não apareceu, fica barrado para o próximo jogo.</p>
+        <p>8 - Confirmou e apareceu após o inicio do jogo. Leva uma tartaruga 🐢. Caso, algum dos times ficar com um número impar o meliante vai ser barrado para o próximo jogo</p>
+        <p>9 - A espera após as 16h. Não pode ser barrada por desconfirmar. Pois não tem obrigação, entretanto uma vez confirmada segue a regra normal.</p>
+        <p>10 - Todo ano os que mais jogaram no ano anterior tem prioridade. Apos o primeiro jogo zera todos. Contabilizando apenas o primeiro jogo do ano.</p>
+    </div>
+
+    <div class="card">
+        <h2>Bem-vindo</h2>  
+        <p>
+            Portal oficial do Fut C5.<br>
+            Use o menu acima para acessar as informações.
+        </p>
+    </div>
+</main>
+
+<footer>
+    © 2026 - Fut C5
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Classificação - Fut C5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --preto: #0b0b0b;
+            --amarelo: #f5c400;
+            --cinza: #1a1a1a;
+            --branco: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: var(--preto);
+            color: var(--branco);
+        }
+
+        header {
+            background: var(--cinza);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid var(--amarelo);
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--amarelo);
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #000;
+        }
+
+        nav a {
+            color: var(--branco);
+            padding: 12px 16px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--amarelo);
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--amarelo);
+        }
+
+        .tabela-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        th {
+            background: var(--cinza);
+            color: var(--amarelo);
+            position: sticky;
+            top: 0;
+        }
+
+        tr:nth-child(even) {
+            background: #111;
+        }
+
+        tr:hover {
+            background: #1f1f1f;
+        }
+
+        .barrado {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            color: #888;
+            font-size: 0.8rem;
+            background: var(--cinza);
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Fut C5</h1>
+</header>
+
+<nav>
+    <a href="index.html">Início</a>
+    <a href="classificacao.html">Classificação</a>
+    <a href="galeria-honra.html">Galeria de Honra</a>
+    <a href="duelo-equipes.html">Duelo de Equipes</a>
+    <a href="controle-caixa.html">Controle de Caixa</a>
+    <a href="ranking-capitaes.html">Ranking de Capitães</a>
+    <a href="historico-caixa.html">Histórico de Caixa Anual</a>
+    <a href="escala-material.html">Escala de Material</a>
+    <a href="ranking-consolidado.html">Ranking Consolidado</a>
+    <a href="constituicao.html">Constituição</a>
+</nav>
+
+<main>
+    <h2>Classificação Geral</h2>
+
+    <div class="tabela-container">
+        <table id="tabelaClassificacao">
+            <thead>
+                <tr></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</main>
+
+<footer>
+    © 2026 - Fut C5
+</footer>
+
+<script>
+fetch("classificacao.csv")
+    .then(response => response.text())
+    .then(data => {
+        const linhas = data.trim().split("\n");
+        const cabecalho = linhas[0].split(",");
+
+        const thead = document.querySelector("#tabelaClassificacao thead tr");
+        const tbody = document.querySelector("#tabelaClassificacao tbody");
+
+        cabecalho.forEach(coluna => {
+            const th = document.createElement("th");
+            th.textContent = coluna;
+            thead.appendChild(th);
+        });
+
+        linhas.slice(1).forEach(linha => {
+            const tr = document.createElement("tr");
+            const colunas = linha.split(",");
+
+            colunas.forEach((valor, index) => {
+                const td = document.createElement("td");
+                td.textContent = valor;
+
+                // Destacar jogadores barrados
+                if (cabecalho[index] === "Barrado" && valor.trim() === "Sim") {
+                    td.classList.add("barrado");
+                }
+
+                tr.appendChild(td);
+            });
+
+            tbody.appendChild(tr);
+        });
+    })
+    .catch(err => {
+        console.error("Erro ao carregar classificação:", err);
+    });
+</script>
+
+</body>
+</html>
